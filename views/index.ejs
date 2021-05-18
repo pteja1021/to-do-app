@@ -35,7 +35,7 @@
             <ul id="tasks_list_items">
                 <% if (items.length>0 )%>
                 <% items.forEach((task)=>{ %>
-                    <li class="task" data-id=<%= task._id %>><p><%= task.task_description %></p><button><i class="fa fa-trash" aria-hidden="true"></i></button></li>
+                    <li ><p><%= task.task_description %></p><a href="/delete/<%= task._id%>" class="tasks"  data-id="<%= task._id %>"><i class="fa fa-trash" aria-hidden="true"></i></a></li>
                 <% }) %>       
             </ul>
         </div>
@@ -43,15 +43,10 @@
         <!--TASKS DESCRIPTION AND CLEAR BUTTON-->
         <div id="no_of_tasks">
             <p id="tasks_description">You have <%= no_of_items%> tasks left.</p>
-            <input id="clear-button" type="button" value="Clear all" >
+            <button id="clear-button"><a id="clear_every" href="/delete/clear_all">Clear all</a></button>
         </div>
     </div>
     </section>
     
-    <script>
-        const delete_item=document.querySelector("li.task");
-        const endpoint=`/${delete_item.id}`
-
-    </script>
 </body>
 </html>

@@ -35,8 +35,22 @@ app.post("/",(req,res)=>{
         res.redirect("/");
     })
     .catch(err=>console.log(err));
-})
+});
 
+app.route("/delete/clear_all").get((req,res)=>{
+    todo.deleteMany({},()=>{
+        res.redirect("/");
+    })
+});
+
+app.route("/delete/:id").get((req,res)=>{
+    const id=req.params.id;
+    todo.findByIdAndDelete(id)
+    .then(result => {
+      res.redirect("/");
+    })
+    .catch(err => { console.log(err); });
+});
 
 app.use((req,res)=>{
     res.status(404).render("404");

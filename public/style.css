@@ -37,7 +37,8 @@ html,body{
 #task_input_field{
     display:flex;
     flex-direction: row;
-    justify-content: baseline;
+    justify-content: space-between;
+    align-items: baseline;
 }
 #task_input_field_value{
     border: none;
@@ -57,6 +58,7 @@ html,body{
     border:none;
     font-size:2rem;
     outline: none;
+    padding-bottom: 0;
 }
 #add_button i{
     transition: all  0.5s;
@@ -70,7 +72,7 @@ html,body{
 #tasks_list_items{
     display: flex;
     flex-direction: column;
-    justify-content: left;
+    justify-content: center;
     list-style-type: none;
     padding:0px;
 }
@@ -78,6 +80,7 @@ html,body{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     margin:2px 0px;
     border: 1px solid #ece9e9;
     border-radius: 0.5rem;
@@ -96,7 +99,10 @@ html,body{
 }
 
 /*DELETE BUTTON FOR EACH ITEM IN TO-DO LIST*/
-#tasks_list_items button{
+#tasks_list_items a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border:none;
     border-radius: 0.5rem;
     outline:none;
@@ -106,14 +112,15 @@ html,body{
     background-color: #ece9e9;
     transition: all 0.5s ease-out;
     background-color: rgba(255, 255, 255, 0);
-    padding:0px;
+    text-decoration: none;
 }
 #tasks_list_items i{
+    color: black;
     border:none;
     outline:none;
     font-size: 1rem;
 }
-#tasks_list_items button:hover{
+#tasks_list_items a:hover{
     background-color:#f05f5f;
     cursor: pointer;
 }
@@ -148,9 +155,17 @@ html,body{
     border:1px solid none;
     border-radius: 0.5rem;
 }
+#clear_every{
+    text-decoration: none; 
+    color:white;
+}
 #clear-button:hover{
     background-color: white;
     border:2px solid black;
     color:black;
     cursor:pointer;
+}
+#clear_every:hover{
+    text-decoration: none;
+    color:black;
 }
