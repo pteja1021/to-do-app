@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--font awesome icons link-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!--Berkshire swash font-->
+    <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet">
+    <!--custom css-->
+    <link rel="stylesheet" href="/style.css"> 
+    <title>To-Do App | <%= title %> </title>
+</head>
+
+<body>
+    <section id="tasks">
+    <div id="content-box-large">  
+        
+        <!--HEADING FOR TO-DO LIST-->
+        <div id="tasks_heading">
+            <h1>To-Do List</h1>
+        </div>
+
+        <!--INPUT FIELD FOR ADDING A TASK-->
+        <div id="task_input_field">
+            <form action="/" method="POST" >
+                <input id="task_input_field_value" type="text" placeholder="Enter your new task" autocomplete="off" name="task_description">
+                <button id="add_button" ><i class="fa fa-plus-square" aria-hidden="true"></i></button>
+            </form>
+        </div>
+
+        <!--TASKS CONTENT-->
+        <div id="tasks_list">
+            <ul id="tasks_list_items">
+                <% if (items.length>0 )%>
+                <% items.forEach((task)=>{ %>
+                    <li class="task" data-id=<%= task._id %>><p><%= task.task_description %></p><button><i class="fa fa-trash" aria-hidden="true"></i></button></li>
+                <% }) %>       
+            </ul>
+        </div>
+
+        <!--TASKS DESCRIPTION AND CLEAR BUTTON-->
+        <div id="no_of_tasks">
+            <p id="tasks_description">You have <%= no_of_items%> tasks left.</p>
+            <input id="clear-button" type="button" value="Clear all" >
+        </div>
+    </div>
+    </section>
+    
+    <script>
+        const delete_item=document.querySelector("li.task");
+        const endpoint=`/${delete_item.id}`
+
+    </script>
+</body>
+</html>

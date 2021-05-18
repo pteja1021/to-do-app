@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+/* GENERIC CSS*/
+html,body{
+    margin:0px;
+    height: 100%;
+    width:100%;
+    padding:0px;
+    background-image:linear-gradient(to bottom, #68EACC 0%, #497BE8 100%);
+}
+
+/*TO-DO BOX*/
+#content-box-large{
+    margin:20px 20px;
+    padding:40px 40px;
+    background-color: rgba(255, 255, 255, 0.548);
+    border-radius: 1rem;
+    z-index: 1;
+    box-shadow: 0 0 0.5rem whitesmoke;
+}
+
+#tasks{
+    height:100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    z-index:0;
+}
+
+/*INPUT FIELDS*/
+#tasks_heading{
+    font-size: 30px;
+    font-family: 'Berkshire swash',sans-serif;
+}
+#task_input_field{
+    display:flex;
+    flex-direction: row;
+    justify-content: baseline;
+}
+#task_input_field_value{
+    border: none;
+    box-shadow: 0 0 0.5rem whitesmoke;
+    height:2rem;
+    width:15rem;
+    font-family: 'Poppins','Berkshire swash',sans-serif;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    outline:none;
+    text-align: center;
+}
+
+/*BUTTON FOR ADDING A TASK*/
+#add_button{
+    background-color: rgba(255, 255, 255, 0);
+    border:none;
+    font-size:2rem;
+    outline: none;
+}
+#add_button i{
+    transition: all  0.5s;
+}
+#add_button:hover i{
+    transform: rotate(90deg);
+    cursor: pointer;
+}
+
+/*ITEMS IN TO-DO LIST*/
+#tasks_list_items{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    list-style-type: none;
+    padding:0px;
+}
+#tasks_list_items li{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin:2px 0px;
+    border: 1px solid #ece9e9;
+    border-radius: 0.5rem;
+    background-color:#f0f0f0;
+}
+
+/*CONTENT OF ITEMS IN TO-DO LIST*/
+#tasks_list_items li p{
+    margin:2px;
+    padding:2px;
+    text-decoration-style: none;
+    font-family: 'Poppins','Berkshire swash',sans-serif;
+    font-size: 1rem;
+    font-weight:450;
+    user-select: none;
+}
+
+/*DELETE BUTTON FOR EACH ITEM IN TO-DO LIST*/
+#tasks_list_items button{
+    border:none;
+    border-radius: 0.5rem;
+    outline:none;
+    height: 2rem;
+    width: 2rem;
+    font-size: 1rem;
+    background-color: #ece9e9;
+    transition: all 0.5s ease-out;
+    background-color: rgba(255, 255, 255, 0);
+    padding:0px;
+}
+#tasks_list_items i{
+    border:none;
+    outline:none;
+    font-size: 1rem;
+}
+#tasks_list_items button:hover{
+    background-color:#f05f5f;
+    cursor: pointer;
+}
+
+/*NUMBER OF TASKS DESCRIPTION*/
+#no_of_tasks{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+}
+#tasks_description{
+    font-size: 1rem;
+    font-family: 'Poppins','Berkshire swash',sans-serif;
+}
+#tasks_description p{
+    user-select: none;
+}
+
+/*CLEAR ALL BUTTON*/
+#clear-button{
+    background:black;
+    height:2rem;
+    width:6rem;
+    font-family: 'Poppins','Berkshire swash',sans-serif;
+    font-size:1rem;
+    color:white;
+    text-align: center;
+    border:none;
+    outline:none;
+    transition: all 0.5s;
+    border:1px solid none;
+    border-radius: 0.5rem;
+}
+#clear-button:hover{
+    background-color: white;
+    border:2px solid black;
+    color:black;
+    cursor:pointer;
+}
